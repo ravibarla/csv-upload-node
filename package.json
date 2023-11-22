@@ -1,0 +1,11 @@
+{
+  "name": "csv-upload",
+  "version": "1.0.0",
+  "description": "csv-upload is a node app to upload and display data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ravi barla",
+  "license": "ISC"
+}
