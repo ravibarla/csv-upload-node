@@ -1,7 +1,9 @@
 import express from "express";
-import { home } from "../controller/controller.js";
+import { home, create, created } from "../controller/controller.js";
 
+export const router = express.Router();
 
-export const router=express.Router()
+router.get("/", home);
+router.post("/", created);
 
-router.get("/",home)
+router.get("/create", create);
