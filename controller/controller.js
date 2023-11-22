@@ -1,4 +1,8 @@
 import { data } from "../data/data.js";
+import multer from "multer";
+import csv from "csv-parser";
+import fs from "fs";
+import path from "path";
 
 export const home = (req, res) => {
   return res.render("home", {
@@ -8,13 +12,17 @@ export const home = (req, res) => {
 };
 
 export const create = (req, res) => {
-  // console.log("hi")
-  return res.render("_create",{
-    title:"create"
+  return res.render("_create", {
+    title: "create",
   });
 };
 
 export const created = (req, res) => {
-  console.log("inside created :",req.body.filename)
-  return res.redirect("/")
+  console.log("inside created :", req.body.filename);
+  return res.redirect("/");
+};
+
+
+export const uploaded = (req, res) => {
+  
 };
