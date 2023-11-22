@@ -1,3 +1,5 @@
 export const home=(req,res)=>{
-    return res.send("hii")
+    return res.render("home",{
+        title:"csv-upload"
+    })
 }
