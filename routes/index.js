@@ -1,5 +1,10 @@
 import express from "express";
-import { home, create, created, uploaded } from "../controller/controller.js";
+import {
+  home,
+  create,
+  created,
+  deleteFile,
+} from "../controller/controller.js";
 import csv from "csv-parser";
 import { upload } from "../index.js";
 import fs from "fs";
@@ -22,5 +27,7 @@ router.post("/uploads", (req, res) => {
     }
   });
   console.log("uploaded ...");
-  return res.redirect("/")
+  return res.redirect("/");
 });
+
+router.post("/delete/:filename", deleteFile);

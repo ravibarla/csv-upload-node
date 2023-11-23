@@ -31,8 +31,7 @@ app.listen(port, () => {
 //set up router
 app.use("/", router);
 
-//multer
-// multer.diskStorage;
+//set up multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.join(path.resolve(), "uploads"));
@@ -40,8 +39,19 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     cb(null, uniqueSuffix + path.extname(file.originalname));
-    // cb(null,file.originalname)
   },
+  fileFilter:function (req, file, cb) {
+    const filetypes = /csv/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+    
+    if (mimetype && extname) {
+      return cb(null, true);
+    }
+    cb(new Error('Error: Only CSV files are allowed!'));
+  }
 });
 
-export const upload = multer({ storage: storage }).single("csvFile");
+export const upload = multer({
+  storage: storage,
+}).single("csvFile");
