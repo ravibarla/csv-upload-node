@@ -1,28 +1,39 @@
 <body>
-    <h1>CSV Data Display - <%= filename %></h1>
-  
+
+    <h1>Filename : <%= filename %></h1>
+    <div id="search-container">
+    <label for="search"><strong>Search:</strong></label>
+    <input type="text" id="search" name="search">
+    <button onclick="searchData()">Search</button>
+  </div>
     <div id="csvTable">
-      <h2>CSV Data:</h2>
+      <!-- <h2>CSV Data:</h2> -->
       <table id="data-table">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Profession</th>
+          <tr id="t-head">
+            <% headers.forEach(header => { %>
+              <th><%= header %></th>
+            <% }); %>
+            
           </tr>
         </thead>
         <tbody>
           <% rows.forEach(row => { %>
             <tr>
-              <td><%= row.id %></td>
+              <% headers.forEach(header => { %>
+                <td><%= row[header] %></td>
+              <% }); %>
+              <!-- <td><%= row.id %></td>
               <td><%= row.firstname %></td>
               <td><%= row.lastname %></td>
               <td><%= row.email %></td>
-              <td><%= row.profession %></td>
+              <td><%= row.profession %></td> -->
             </tr>
           <% }); %>
         </tbody>
       </table>
     </div>
+    
   </body>
+  
   </html>

@@ -1,13 +1,12 @@
 import express from "express";
 import {
   home,
-  create,
-  created,
+  upload as uploadController,
   deleteFile,
   displayCsvFile,
 } from "../controller/controller.js";
 import csv from "csv-parser";
-import { upload } from "../index.js";
+import { upload  } from "../index.js";
 import fs from "fs";
 import path from "path";
 
@@ -17,7 +16,7 @@ router.get("/", home);
 // router.post("/", created);
 // router.post("/", uploaded);
 
-router.get("/create", create);
+router.get("/uploads", uploadController);
 
 router.post("/uploads", (req, res) => {
   upload(req, res, function (err) {
@@ -33,4 +32,4 @@ router.post("/uploads", (req, res) => {
 
 router.post("/delete/:filename", deleteFile);
 
-router.post("/display/:filename",displayCsvFile)
+router.post("/display/:filename", displayCsvFile);
