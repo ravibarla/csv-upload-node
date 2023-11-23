@@ -4,6 +4,7 @@ import {
   create,
   created,
   deleteFile,
+  displayCsvFile,
 } from "../controller/controller.js";
 import csv from "csv-parser";
 import { upload } from "../index.js";
@@ -31,3 +32,5 @@ router.post("/uploads", (req, res) => {
 });
 
 router.post("/delete/:filename", deleteFile);
+
+router.post("/display/:filename",displayCsvFile)

@@ -1,19 +1,23 @@
 <h1>home</h1>
 
 <% if (files.length > 0) { %>
-    
-    <h2>Uploaded Files:</h2>
-    <ul>
-      <% files.forEach(file => { %>
-        <form action="/delete/<%=file%>" method="post">
-        <li><%= file %></li>
-        <button type="submit" >
-            <li>delete</li>
-        </button>
-        
-      <% }); %>
-    </ul>
-  <% } else { %>
-    <p>No files uploaded yet.</p>
-  <% } %>
-</form>
+
+<h2>Uploaded Files:</h2>
+<ul>
+  <% files.forEach(file => { %>
+  <li><%= file %></li>
+  <form action="/delete/<%=file%>" method="post">
+    <button type="submit">
+      <li>delete</li>
+    </button>
+  </form>
+  <form action="/display/<%=file%>" method="post">
+    <button type="submit">
+      <li>view</li>
+    </button>
+  </form>
+  <% }); %>
+</ul>
+<% } else { %>
+<p>No files uploaded yet.</p>
+<% } %>

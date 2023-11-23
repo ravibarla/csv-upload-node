@@ -37,3 +37,19 @@ export const deleteFile = (req, res) => {
   }
   return res.redirect("/");
 };
+
+
+export const displayCsvFile=(req,res)=>{
+  const rows=[]
+  const filename = req.params.filename;
+  const filePath = path.join(path.resolve(), 'uploads', filename);
+  fs.createReadStream(filePath)
+    .pipe(csv())
+    .on('data', (row) => {
+      rows.push(row);
+    })
+    .on('end', () => {
+      // Render the data in table format
+      return res.render('_displayTable', {title:"display-csv-file", filename, rows });
+    });
+}
