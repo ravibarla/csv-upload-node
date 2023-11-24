@@ -1,21 +1,36 @@
-<form action="/uploads" method="post" enctype="multipart/form-data">
+<div
+  style="
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  "
+>
+  <form action="/uploads" method="post" enctype="multipart/form-data">
     <!-- <input type="text" name="filename" > -->
-    <input type="file" name="csvFile" id="" placeholder="select your file" accept=".csv" required>
+    <input
+      type="file"
+      name="csvFile"
+      id=""
+      placeholder="select your file"
+      accept=".csv"
+      required
+    />
     <button type="submit">submit</button>
-</form>
+  </form>
 </div>
-
 <script>
-    function validateFile() {
-        const fileInput = document.getElementById('csvfile');
-        const filePath = fileInput.value;
-        const allowedExtensions = /(\.csv)$/i;
+  function validateFile() {
+    const fileInput = document.getElementById("csvfile");
+    const filePath = fileInput.value;
+    const allowedExtensions = /(\.csv)$/i;
 
-        if (!allowedExtensions.exec(filePath)) {
-            alert('Please upload only CSV files.');
-            return false;
-        } else {
-            return true;
-        }
+    if (!allowedExtensions.exec(filePath)) {
+      alert("Please upload only CSV files.");
+      return false;
+    } else {
+      return true;
     }
+  }
 </script>

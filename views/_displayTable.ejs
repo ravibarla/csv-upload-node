@@ -1,6 +1,6 @@
 <body>
 <div>
-    <h1>Filename : <%= filename %></h1>
+    <h4>Filename : <%= filename %></h1>
     <div id="search-container">
     <label for="search"><strong>Search:</strong></label>
     <input type="text" id="search" name="search" value="">
@@ -12,7 +12,7 @@
         <thead>
           <tr id="t-head">
             <% headers.forEach(header => { %>
-              <th><%= header %></th>
+              <th style="border: 1px solid black;"><%= header %></th>
             <% }); %>
             
           </tr>
@@ -21,7 +21,7 @@
           <% rows.forEach(row => { %>
             <tr>
               <% headers.forEach(header => { %>
-                <td><%= row[header] %></td>
+                <td style="border: 1px solid black;"><%= row[header] %></td>
               <% }); %>
               <!-- <td><%= row.id %></td>
               <td><%= row.firstname %></td>

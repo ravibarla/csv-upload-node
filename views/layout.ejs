@@ -31,12 +31,19 @@
     <!-- include the header file -->
     <%- include("_header");%>
     <!-- include body -->
-    <%- body%> <%- include("_footer");%>
+    <%- body%>
+    <!-- <%- include("_footer");%> -->
     <script>
       function searchData() {
         const input = document.getElementById("search").value.toLowerCase();
         const table = document.getElementById("data-table");
         const rows = table.getElementsByTagName("tr");
+
+        let headerVisible = false;
+        const headerRow = table
+          .getElementsByTagName("thead")[0]
+          .getElementsByTagName("tr")[0];
+
         for (let i = 0; i < rows.length; i++) {
           let found = false;
           const cells = rows[i].getElementsByTagName("td");
@@ -49,27 +56,17 @@
           }
           if (found) {
             rows[i].style.display = "";
+            headerVisible = true;
           } else {
             rows[i].style.display = "none";
           }
         }
-        // const headerRow = table.getElementsByTagName('thead').getElementsByTagName('tr');
-        // const headers = headerRow.getElementsByTagName('th');
-        // headerRow.style.display = '';
 
-        // let headerVisible = false;
-        // for (let k = 0; k < headers.length; k++) {
-        //   const headerText = headers[k].textContent.toLowerCase();
-        //   if (headerText.includes(input)) {
-        //     headerVisible = true;
-        //     break;
-        //   }
-        // }
-        // if (headerVisible) {
-        //   headerRow.style.display = '';
-        // } else {
-        //   headerRow.style.display = 'none';
-        // }
+        if (headerVisible) {
+          headerRow.style.display = "";
+        } else {
+          headerRow.style.display = "none";
+        }
       }
     </script>
 
