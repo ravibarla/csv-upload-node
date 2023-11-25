@@ -5,19 +5,18 @@ import {
   deleteFile,
   displayCsvFile,
 } from "../controller/controller.js";
-import csv from "csv-parser";
-import { upload  } from "../index.js";
+import { upload } from "../index.js";
+
 import fs from "fs";
 import path from "path";
 
 export const router = express.Router();
 
 router.get("/", home);
-// router.post("/", created);
-// router.post("/", uploaded);
 
 router.get("/uploads", uploadController);
 
+//router to control the file uploading
 router.post("/uploads", (req, res) => {
   upload(req, res, function (err) {
     if (err) {

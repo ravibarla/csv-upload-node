@@ -7,7 +7,6 @@
     <button onclick="searchData()">Search</button>
   </div>
     <div id="csvTable">
-      <!-- <h2>CSV Data:</h2> -->
       <table id="data-table">
         <thead>
           <tr id="t-head">
@@ -23,11 +22,7 @@
               <% headers.forEach(header => { %>
                 <td style="border: 1px solid black;"><%= row[header] %></td>
               <% }); %>
-              <!-- <td><%= row.id %></td>
-              <td><%= row.firstname %></td>
-              <td><%= row.lastname %></td>
-              <td><%= row.email %></td>
-              <td><%= row.profession %></td> -->
+           
             </tr>
           <% }); %>
         </tbody>

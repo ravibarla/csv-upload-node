@@ -17,10 +17,6 @@ export const upload = (req, res) => {
   });
 };
 
-// export const created = (req, res) => {
-//   console.log("inside created :", req.body.filename);
-//   return res.redirect("/");
-// };
 
 export const deleteFile = (req, res) => {
   console.log("params :", req.params.filename);
