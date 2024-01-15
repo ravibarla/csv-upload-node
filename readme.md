@@ -11,7 +11,7 @@ features :-
 3. view a csv file in table form
 4. search a data in that table
 
-technology used :-
+built using:-
 
 1. node js
 2. express js
@@ -23,3 +23,47 @@ technology used :-
 deployment platform :-
 
 1. Render
+
+
+## Tech
+
+Dillinger uses a number of open source projects to work properly:
+
+1. [node-js]
+2. [express-js]
+3. [ejs-template-engine]
+4. [css]
+5. [bootstrap]
+6. [html] 
+
+## Plugins
+
+Instructions on how to use them in your own application are linked below.
+
+| Plugin | README |
+| ------ | ------ |
+| GitHub | [plugins/github/README.md]
+
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+[HTML]:<https://developer.mozilla.org/en-US/docs/Web/HTML>
+[CSS]:<https://developer.mozilla.org/en-US/docs/Learn/CSS>
+[node-js]:<https://nodejs.org/en>
+[express-js]:<https://expressjs.com/>
+[ejs-template-engine]: <https://ejs.co/>
+[bootstrap]: <https://getbootstrap.com/>
+
+
+
+
+## Screenshots
+   
+- Home page
+   
+![Alt text](home.png )
+
+- File View
+
+![Alt text](file-view.png )
+
