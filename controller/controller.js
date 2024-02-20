@@ -3,6 +3,7 @@ import csv from "csv-parser";
 import fs from "fs";
 import path from "path";
 
+//function to control the home page
 export const home = (req, res) => {
   const files = fs.readdirSync(path.join(path.resolve(), "uploads"));
   return res.render("home", {
@@ -11,6 +12,7 @@ export const home = (req, res) => {
   });
 };
 
+
 export const upload = (req, res) => {
   return res.render("_upload", {
     title: "upload",
@@ -18,6 +20,7 @@ export const upload = (req, res) => {
 };
 
 
+//function to control the file deletion
 export const deleteFile = (req, res) => {
   console.log("params :", req.params.filename);
   const filename = req.params.filename;
@@ -33,6 +36,7 @@ export const deleteFile = (req, res) => {
   return res.redirect("/");
 };
 
+//function to control the display of csv file
 export const displayCsvFile = (req, res) => {
   const rows = [];
   let headers = [];

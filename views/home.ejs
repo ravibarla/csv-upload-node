@@ -2,6 +2,7 @@
 
 <div
   style="
+    background-color: #ecb159;
     border: 2px solid black;
     width: 500px;
     display: flex;
@@ -21,7 +22,7 @@
 >
   <!-- <ul> -->
   <% files.forEach(file => { %>
-  <div style="display: flex; flex-direction: row">
+  <div style="display: flex; flex-direction: row;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
     <li style="list-style: none"><%= file %></li>
     <form action="/delete/<%=file%>" method="post">
       <button type="submit">
